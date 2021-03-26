@@ -2,11 +2,10 @@ import os
 import httpx
 import re
 import time
-uid = os.environ["uid"]
-SendKey = os.environ["SendKey"]
-minSpeed = float(os.environ["minSpeed"])
+uid = os.environ["UID"]
+SendKey = os.environ["SENDKEY"]
+minSpeed = float(os.environ["MINSPEED"])
 minMileage = int(os.environ["minMileage"])
-alwaysSend = bool(os.environ["alwaysSend"])
 
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
