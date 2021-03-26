@@ -9,11 +9,11 @@ on:
     - cron: '0 12 * * *'
 
 env:
-  uid = ${{ secrets.uid}}
-  SendKey = ${{ secrets.SendKey}}
-  minSpeed = ${{ secrets.minSpeed}}
-  minMileage = ${{ secrets.minMileage}}
-  alwaysSend = ${{ secrets.alwaysSend}}
+  uid = ${{ secrets.uid }}
+  SendKey = ${{ secrets.SendKey }}
+  minSpeed = ${{ secrets.minSpeed }}
+  minMileage = ${{ secrets.minMileage }}
+  alwaysSend = ${{ secrets.alwaysSend }}
 
 jobs:
   deploy:
