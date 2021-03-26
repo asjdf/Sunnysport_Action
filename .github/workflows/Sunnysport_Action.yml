@@ -1,0 +1,33 @@
+name: Sunnysport_Action
+
+on:
+  push:
+    branches: main
+  watch:
+    types: started
+  schedule:
+    - cron: '0 12 * * *'
+
+env:
+  uid = ${{ secrets.uid}}
+  SendKey = ${{ secrets.SendKey}}
+  minSpeed = ${{ secrets.minSpeed}}
+  minMileage = ${{ secrets.minMileage}}
+  alwaysSend = ${{ secrets.alwaysSend}}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout codes
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: run program
+      run: |
+        python main.py
