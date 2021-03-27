@@ -13,6 +13,8 @@ env:
   SENDKEY: ${{ secrets.SENDKEY }}
   MINSPEED: ${{ secrets.MINSPEED }}
   MINMILEAGE: ${{ secrets.MINMILEAGE }}
+  # telegram_uid: ${{ secrets.telegram_uid }}
+  # telegram_botKey: ${{ secrets.telegram_botKey }}
 
 jobs:
   deploy:
