@@ -6,6 +6,7 @@ import time
 
 # CONFIG PART =====================================
 uid = os.environ["UID"]
+password = os.environ["PASSWORD"]
 SendKey = os.environ["SENDKEY"]
 minSpeed = float(os.environ["MINSPEED"])
 minMileage = int(os.environ["MINMILEAGE"])
@@ -34,9 +35,7 @@ vrf = re.search('name="vrf" value="(.*?)">', r.content.decode()).group(1)
 loginData = {
     'username': uid,
     'vrf': vrf,
-    'password': uid
-    # important if you not change the init password as your uid
-    # if you do that please add Secret to your own
+    'password': password
 }
 
 r = session.post('http://hdu.sunnysport.org.cn/login/',headers=header,data=loginData,allow_redirects=False)
