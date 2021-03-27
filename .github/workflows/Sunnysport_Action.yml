@@ -13,6 +13,7 @@ env:
   SENDKEY: ${{ secrets.SENDKEY }}
   MINSPEED: ${{ secrets.MINSPEED }}
   MINMILEAGE: ${{ secrets.MINMILEAGE }}
+  # PASSWORD: ${{ secrets.PASSWORD }}
 
 jobs:
   deploy:
