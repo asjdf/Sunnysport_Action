@@ -1,20 +1,14 @@
 # coding=utf-8
-# import telegram
 import os
 import httpx
 import re
 import time
-
 
 # CONFIG PART =====================================
 uid = os.environ["UID"]
 SendKey = os.environ["SENDKEY"]
 minSpeed = float(os.environ["MINSPEED"])
 minMileage = int(os.environ["MINMILEAGE"])
-# telegram_userid = os.environ['telegram_uid']
-# telegram_userid = My_chat_id
-# telegram_botKey = os.environ['telegram_botKey']
-# bot = telegram.Bot(telegram_botKey='1234567890:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
 
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
@@ -40,7 +34,9 @@ vrf = re.search('name="vrf" value="(.*?)">', r.content.decode()).group(1)
 loginData = {
     'username': uid,
     'vrf': vrf,
-    'password': uid # important if you not change the init password
+    'password': uid
+    # important if you not change the init password as your uid
+    # if you do that please add Secret to your own
 }
 
 r = session.post('http://hdu.sunnysport.org.cn/login/',headers=header,data=loginData,allow_redirects=False)
@@ -78,5 +74,3 @@ if todayRecord:
     }
     httpx.post('https://sctapi.ftqq.com/{}.send'.format(SendKey),data=msg2send)
     
-    # alternative telegram bot (need web Server)
-    # bot.send_message(chat_id=My_chat_id,text=desp)
