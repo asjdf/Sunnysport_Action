@@ -70,3 +70,7 @@
 在最新的代码中，已经加上自动同步上游代码的`Action`，将会定时在每周五`16`点执行，文件地址在`.github/workflows/auto_merge.yml`。
 
 同时您也可以安装[pull](https://github.com/apps/pull)应用，也可实现自动同步上游代码。
+
+#### 注释
+
+如果您是使用 telegram 的重度用户 可以 使用 @Esonhugh 提供的 某份 pr ( has closed ) 来进行 tg bot 的消息通知推送
