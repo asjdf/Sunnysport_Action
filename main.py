@@ -26,9 +26,9 @@ r = session.get('http://hdu.sunnysport.org.cn/login/',headers=header)
 header['Cookie'] = re.match('(sessionid=.*?);',r.headers.get('set-cookie')).group(1)
 vrf = re.search('name="vrf" value="(.*?)">', r.content.decode()).group(1)
 loginData = {
-    'username': '20322230',
+    'username': uid,
     'vrf': vrf,
-    'password': '20322230'
+    'password': uid
 }
 r = session.post('http://hdu.sunnysport.org.cn/login/',headers=header,data=loginData,allow_redirects=False)
 header['Cookie'] = re.match('(sessionid=.*?);',r.headers.get('set-cookie')).group(1)
